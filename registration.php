@@ -7,7 +7,7 @@
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(
-	\Magento\Framework\Component\ComponentRegistrar::MODULE,
-	'Barranco_MagentoArchitecture',
-	__DIR__
+    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+    'Barranco_MagentoArchitecture',
+    __DIR__
 );
