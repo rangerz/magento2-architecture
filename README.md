@@ -12,4 +12,10 @@ This is a module which cover the topics from the Unit 1 for the certification ex
 
 Demonstrated at the module, files needed to bootstrap a Magento 2 module are: `registration.php`, `composer.json` and `etc/module.xml`
 
- 
+### What are the different Composer package types? 
+
+At line 7 of the composer.json file you can find a `type` field that you need to add when you are packing a component. The magento 2 composer package types could be:
+
+- magento2-module
+- magento2-theme
+- magento2-language

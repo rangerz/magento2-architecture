@@ -1,5 +1,5 @@
 {
-	"name": "barranco/magento2-architecture",
+    "name": "barranco/magento2-architecture",
     "description": "A module to illustrate Magento 2 Architecture to cover topics related to the certification exam",
     "require":{
         "php": "~7.1.3||~7.2.0"
