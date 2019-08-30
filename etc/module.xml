@@ -3,10 +3,30 @@
 /**
  * Certification comments
  *
- * 1. etc/module.xml is one of the three require files to bootstrap a module
+ * 1.  etc/module.xml is one of the three require files to bootstrap a module
+ * 2.  Each module needs this file with almost the same structure
+ * 3.  Difference between each other would be values at the name and setup_version of the module tag
+ * 4.  name attribute value should be the same that you use as componentName at the registration.php file
+ * 5.  setup_version attribute value indicates which upgrade should run 
+ * 6.  Before installed your module it didn't appears at the [magento-path]etc/config.php file and it is
+ *     not listed at the setup_module table in your database
+ * 7.  After you run the module installation a row would exist in both the [magento-path]etc/config.php
+ *     and at the setup_module table
+ * 8.  Sometimes you need to modify or add something to the database before the first time you run the
+ *     module instalation and to manage it the setup_version exists, need to run and upgrade from the
+ *     module? Change your setup version then.
+ * 9.  You can add a sequence tag that should be used when you are going to modify something of another
+ *     module (plugins, events, layouts, etc) You need it because if your module runs first the other 
+ *     module would rewrite your functionality
+ * 10. Imagine you are going to create a new module to add regions of your country then you need to add a 
+ *     sequence tag to let Magento know you need run your module after the Magento Directory module.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     	xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-	<module name="Barranco_MagentoArchitecture" setup_version="1.0.0" />
+	<module name="Barranco_MagentoArchitecture" setup_version="1.0.2">
+        <sequence>
+            <module name="Magento_Directory">
+        </sequence>   
+    </module>
 </config>
