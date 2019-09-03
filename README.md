@@ -22,8 +22,10 @@ At line 7 of the composer.json file you can find a `type` field that you need to
 
 ### When would you place a module in the app/code folder versus another location?
 
-When I am developing this module lives into the app/code folder because it solves an specific requiremnt. If I package and publish it then the module will live at the vendor folder as any other third-party module installed using composer.
+While I am developing this module lives into the app/code folder because it solves an specific requiremnt. If I package and publish it then the module will live at the vendor folder as any other third-party module installed using composer.
 
 ### What are the naming conventions, and how are namespaces established?
+
+
 
 ### How can you identify the files responsible for some functionality?
