@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Certification comments
+ *
+ * 1. The routes.xml file maps which module to use when a page is requested from a Magento website
+ * 2. The location of the routes.xml file in a module, either etc/frontend or etc/adminhtml, specifies 
+ *    where those routes are active.
+ * 3. At the router node the id attribute specifies the name of the router in Magento (For custom 
+ *    frontend controller this id should be "standard")
+ * 4. The route node has the following attributes:
+ *      a) id: specifies the unique identifier for this route
+ *      b) frontName: specifies the first segment after the base URL of a request
+ * 5. At the module node the name attribute specifies the name of your module
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="magentoarchitecture" frontName="magentoarchitecture">
+            <module name="Barranco_MagentoArchitecture" />
+        </route>
+    </router>
+</config>
