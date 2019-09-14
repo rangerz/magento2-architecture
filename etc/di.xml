@@ -14,6 +14,24 @@
  *              </argument>
  *          </arguments>
  *      </type>
+ *
+ * 2. This file is one of the "Module cofiguration files". Abou this check following information:
+ *
+ *         a) Magento’s multiple configuration files load on demand only when a module requests a 
+ *            specific configuration type.
+ *         b) You can use these files to customize specific aspects of your module’s behavior. 
+ *         c) Multiple modules can declare configuration files that affect the same configuration 
+ *            type.
+ *         d) Magento loads configuration files in the following order: 
+ *             
+ *                i)   Primary configuration (app/etc/di.xml). This file is used to bootstrap 
+ *                     Magento.
+ *                ii)  Global configurations from modules. It means all *.xml files in each 
+ *                     module etc subdirectory.
+ *                iii) Area-specific configuration from modules. It menas all *.xml files in each 
+ *                     module etc/<area> subdirectory. Areas could be: adminhtml & frontend then 
+ *                     to specify you should create your configuration file within your module 
+ *                     etc/adminhtml or etc/frontend subdirectory.
  * 
  */
 -->

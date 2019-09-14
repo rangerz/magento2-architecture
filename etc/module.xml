@@ -5,21 +5,43 @@
  *
  * 1.  etc/module.xml is one of the three require files to bootstrap a module
  * 2.  Each module needs this file with almost the same structure
- * 3.  Difference between each other would be values at the name and setup_version of the module tag
- * 4.  name attribute value should be the same that you use as componentName at the registration.php file
+ * 3.  Difference between each other would be values at the name and setup_version of the module 
+ *     tag
+ * 4.  name attribute value should be the same that you use as componentName at the 
+ *     registration.php file
  * 5.  setup_version attribute value indicates which upgrade should run 
- * 6.  Before installed your module it didn't appears at the [magento-path]etc/config.php file and it is
+ * 6.  Before installed your module it didn't appears at the [magento-path]etc/config.php file 
+ *     and it is
  *     not listed at the setup_module table in your database
- * 7.  After you run the module installation a row would exist in both the [magento-path]etc/config.php
- *     and at the setup_module table
- * 8.  Sometimes you need to modify or add something to the database before the first time you run the
- *     module instalation and to manage it the setup_version exists, need to run and upgrade from the
- *     module? Change your setup version then.
- * 9.  You can add a sequence tag that should be used when you are going to modify something of another
- *     module (plugins, events, layouts, etc) You need it because if your module runs first the other 
- *     module would rewrite your functionality
- * 10. Imagine you are going to create a new module to add regions of your country then you need to add a 
- *     sequence tag to let Magento know you need run your module after the Magento Directory module.
+ * 7.  After you run the module installation a row would exist in both the [magento-path]etc/
+ *     config.php and at the setup_module table
+ * 8.  Sometimes you need to modify or add something to the database before the first time you 
+ *     run the module instalation and to manage it the setup_version exists, need to run and 
+ *     upgrade from the module? Change your setup version then.
+ * 9.  You can add a sequence tag that should be used when you are going to modify something of 
+ *     another
+ *     module (plugins, events, layouts, etc) You need it because if your module runs first the 
+ *     other module would rewrite your functionality
+ * 10. Imagine you are going to create a new module to add regions of your country then you need 
+ *     to add a sequence tag to let Magento know you need run your module after the Magento 
+ *     Directory module.
+ * 11. This file is one of the "Module cofiguration files". Abou this check following information:
+ *
+ *         a) Magento’s multiple configuration files load on demand only when a module requests a 
+ *            specific configuration type.
+ *         b) You can use these files to customize specific aspects of your module’s behavior. 
+ *         c) Multiple modules can declare configuration files that affect the same configuration 
+ *            type.
+ *         d) Magento loads configuration files in the following order: 
+ *             
+ *                i)   Primary configuration (app/etc/di.xml). This file is used to bootstrap 
+ *                     Magento.
+ *                ii)  Global configurations from modules. It means all *.xml files in each 
+ *                     module etc subdirectory.
+ *                iii) Area-specific configuration from modules. It menas all *.xml files in each 
+ *                     module etc/<area> subdirectory. Areas could be: adminhtml & frontend then 
+ *                     to specify you should create your configuration file within your module 
+ *                     etc/adminhtml or etc/frontend subdirectory. 
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

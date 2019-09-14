@@ -4,7 +4,8 @@
  * Certification comments
  *
  * 1. The routes.xml file maps which module to use when a page is requested from a Magento website
- * 2. The location of the routes.xml file in a module, either etc/frontend or etc/adminhtml, specifies 
+ * 2. The location of the routes.xml file in a module, either etc/frontend or etc/adminhtml, 
+ *    specifies 
  *    where those routes are active.
  * 3. At the router node the id attribute specifies the name of the router in Magento (For custom 
  *    admin controller this id should be "admin")
@@ -12,10 +13,27 @@
  *      a) id: specifies the unique identifier for this route
  *      b) frontName: specifies the first segment after the base URL of a request
  * 5. At the module node the name attribute specifies the name of your module
- * 6. Sometimes you need to define a before or after attribute at the module node to override or extend 
- *    routes in existing modules.
- * 7. In custom admin controllers you use before attribute to look for actions in your custom module 
- *    before searching in the Magento_Backend module.  
+ * 6. Sometimes you need to define a before or after attribute at the module node to override or 
+ *    extend routes in existing modules.
+ * 7. In custom admin controllers you use before attribute to look for actions in your custom 
+ *    module before searching in the Magento_Backend module. 
+ * 8. This file is one of the "Module cofiguration files". Abou this check following information:
+ *
+ *         a) Magento’s multiple configuration files load on demand only when a module requests a 
+ *            specific configuration type.
+ *         b) You can use these files to customize specific aspects of your module’s behavior. 
+ *         c) Multiple modules can declare configuration files that affect the same configuration 
+ *            type.
+ *         d) Magento loads configuration files in the following order: 
+ *             
+ *                i)   Primary configuration (app/etc/di.xml). This file is used to bootstrap 
+ *                     Magento.
+ *                ii)  Global configurations from modules. It means all *.xml files in each 
+ *                     module etc subdirectory.
+ *                iii) Area-specific configuration from modules. It menas all *.xml files in each 
+ *                     module etc/<area> subdirectory. Areas could be: adminhtml & frontend then 
+ *                     to specify you should create your configuration file within your module 
+ *                     etc/adminhtml or etc/frontend subdirectory. 
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
