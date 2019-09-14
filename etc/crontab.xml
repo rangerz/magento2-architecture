@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Certification comments
+ *
+ * 1. This configuration file sets a schedule to run your custom cron code.
+ * 2. This file lives in your module etc subdirectory
+ * 3. This example use group id "default" but you can create your own like this:
+ *     
+ *    a) Create a cron_groups.xml file in your module etc sudirectory with the following contents:
+ *        
+ *        <?xml version="1.0"?>
+ *        <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ *            xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
+ *            <group id="custom_crongroup">
+ *                <schedule_generate_every>1</schedule_generate_every>
+ *                <schedule_ahead_for>4</schedule_ahead_for>
+ *                <schedule_lifetime>2</schedule_lifetime>
+ *                <history_cleanup_every>10</history_cleanup_every>
+ *                <history_success_lifetime>60</history_success_lifetime>
+ *                <history_failure_lifetime>600</history_failure_lifetime>
+ *                <use_separate_process>1</use_separate_process>
+ *            </group>
+ *        </config>
+ *
+ *    b) In this file change "default" group id by "custom_crongroup"
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="custom_cronjob" instance="Barranco\MagentoArchitecture\Cron\Custom" method="execute">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>            
+</config>

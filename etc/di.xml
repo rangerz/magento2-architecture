@@ -7,12 +7,13 @@
  *    
  *      <type name="Magento\Framework\Console\CommandList">
  *          <arguments>
- *               <argument name="commands" xsi:type="array">
- *                   <item name="commandName" 
+ *              <argument name="commands" xsi:type="array">
+ *                  <item 
+ *                      name="commandName" 
  *                      xsi:type="object">Component\Path\To\Console\CommandNameClass</item>
- *               </argument>
- *           </arguments>
- *       </type>
+ *              </argument>
+ *          </arguments>
+ *      </type>
  * 
  */
 -->
