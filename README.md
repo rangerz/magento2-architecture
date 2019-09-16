@@ -12,6 +12,13 @@ This is a module which cover the topics from the Unit 1 for the certification ex
 
 Demonstrated at the module, files needed to bootstrap a Magento 2 module are: `registration.php`, `composer.json` and `etc/module.xml`
 
+### i18n subdirectory
+
+1. The Magento application enables you to localize your store for multiple regions and markets.
+2. A transalation dictionary is a comma-separated value (csv) file with at least two columns: the original phrase in the en_US locale and a transalation of that phrase in an another locale.
+3. Your custom module could has its own i18n subdirectory to add some phrases you or people using your module could translate.
+4. Besides to create your `i18n` subdirectory you should use the `__()` method in prhases you want to translate. 
+
 ### What are the different Composer package types? 
 
 At line 7 of the composer.json file you can find a `type` field that you need to add when you are packing a component. The magento 2 composer package types could be:

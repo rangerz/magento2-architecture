@@ -11,6 +11,9 @@
  *        a) Add Helper class as a Dependicy in your constructor method
  *        b) Assign that dependecy to a local variable
  *        c) Through this variable access to helper class methods and use those whatever you need
+ * 
+ * 4. In order to exemplify the use of i18n in Magento add your testing phrases into the __() 
+ *    method, like this: __("Text to translate")  
  */
 
 namespace Barranco\MagentoArchitecture\Controller\Index;
@@ -48,8 +51,8 @@ class Index extends Action
      */
     public function execute()
     {
-        echo $this->helper->toUpperCase('Welcome to Custom Fronten Controller');
+        echo $this->helper->toUpperCase(__('Welcome to Custom Fronten Controller'));
         echo '<br/>';
-        echo $this->helper->toLowerCase('This is a welcome message');
+        echo $this->helper->toLowerCase(__('This is a welcome message'));
     }
 }
