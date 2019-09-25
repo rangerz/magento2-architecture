@@ -17,8 +17,8 @@ interface CustomRepositoryInterface
      * 
      * 1. Repository interface must provide this method
      * 2. In the implementation of this interface if an ID is not specified, creates a record
-     * 3. In the implementation of this interface if an ID is specified, updates the record for the
-     *    specific ID
+     * 3. In the implementation of this interface if an ID is specified, updates the record for 
+     *    the specific ID
      * 4. Method param must be an implementation of a Data Interface
      * 
      * @param   \Barranco\MagentoArchitecture\Api\Data\CustomInterface $custom
@@ -38,7 +38,7 @@ interface CustomRepositoryInterface
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function get($customId);
+    public function get(int $customId);
 
     /**
      * Certification comments
@@ -76,6 +76,6 @@ interface CustomRepositoryInterface
      * @return bool
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function deleteById($customId)
+    public function deleteById(int $customId)
 
 }

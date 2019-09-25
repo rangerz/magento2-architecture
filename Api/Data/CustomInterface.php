@@ -40,7 +40,7 @@ interface CustomInterface
      * @param  int $id
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      */
-    public function setId($id);
+    public function setId(int $id);
 
     /**
      * Set title
@@ -48,7 +48,7 @@ interface CustomInterface
      * @param  string $title
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      */
-    public function setTitle($title);
+    public function setTitle(string $title);
 
     /**
      * Set date
@@ -56,5 +56,5 @@ interface CustomInterface
      * @param  string $date
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      */
-    public function setDate($date);
+    public function setDate(string $date);
 }
