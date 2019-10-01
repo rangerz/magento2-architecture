@@ -14,12 +14,20 @@
  * 
  * 4. In order to exemplify the use of i18n in Magento add your testing phrases into the __() 
  *    method, like this: __("Text to translate")  
+ * 5. In order to work with events in this class you are adding the Event ManagerInterface using 
+ *    DI. That allows you to dispatch your custom(s) event(s). Events:
+ * 
+ *    a) Are dispatched by modules when certain actions are triggered.
+ *    b) Can cbe reated by you and dispatched in your code.
+ *    c) Is dispatched using the dispatch method of the event manager class providing it with the 
+ *       name of the event you want to dispatch: $this->eventManager->dispatch('event_name');
  */
 
 namespace Barranco\MagentoArchitecture\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 use Barranco\MagentoArchitecture\Helper\Data;
 
 class Index extends Action
@@ -31,18 +39,26 @@ class Index extends Action
     private $helper;
 
     /**
+     * @var \Magento\Framework\Event\ManagerInterface
+     */
+    private $eventManager;
+
+    /**
      * Class constructor
      * 
      * @param \Magento\Framework\App\Action\Context $context
      * @param \Barranco\MagentoArchitecture\Helper\Data $helper
+     * @param \Magento\Framework\Event\ManagerInterface $eventManager
      * @return $this
      */
     public function __construct(
         Context $context,
-        Data $helper
+        Data $helper,
+        EventManager $eventManager
     )
     {
-        $this->helper = $helper;
+        $this->helper       = $helper;
+        $this->eventManager = $eventManager;
         parent::__construct($context);
     }
 
@@ -51,8 +67,10 @@ class Index extends Action
      */
     public function execute()
     {
+        $this->eventManager->dispatch('custom_module_event_before');
         echo $this->helper->toUpperCase(__('Welcome to Custom Fronten Controller'));
         echo '<br/>';
         echo $this->helper->toLowerCase(__('This is a welcome message'));
+        $this->eventManager->dispatch('custom_module_event_after');
     }
 }

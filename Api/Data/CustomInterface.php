@@ -40,7 +40,7 @@ interface CustomInterface
      * @param  int $id
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      */
-    public function setId(int $id);
+    public function setId($id);
 
     /**
      * Set title

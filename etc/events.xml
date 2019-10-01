@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Certification comments
+ *
+ * 1. Events are dispatched by modules when certain actions are triggered.
+ * 2. You can create your own events that can be dispatched in your code.
+ * 3. Observers can be configured to watch certains events in this kind of files.
+ * 4. For each event you need the following element and properties:
+ * 
+ *    <event name="<event_name>">
+ *        <observer name="<uniqueNameOfYourObserver>" instance="<Vendor\Module\Observer\Class>" />
+ *    </event>
+ *
+ * 5. In observer tag you can optionally add:
+ *
+ *    a) disabled: Determines whether this observer is active or not.
+ *    b) shared: Determines the lifestyle of the class. 
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="custom_module_event_before">
+        <observer name="customBeforeObserver" instance="Barranco\MagentoArchitecture\Observer\Custom\Before" />
+    </event>
+    <event name="custom_module_event_after">
+        <observer name="customAfterObserver" instance="Barranco\MagentoArchitecture\Observer\Custom\After" />
+    </event>
+</config>

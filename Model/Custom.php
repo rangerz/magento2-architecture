@@ -65,7 +65,7 @@ class Custom extends AbstractModel implements CustomInterface
      * @param  int $id
      * @return \Barranco\MagentoArchitecture\Api\Data\CustomInterface
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         // TODO: Add method to set id value in database table column
         return true;

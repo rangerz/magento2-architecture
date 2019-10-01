@@ -76,6 +76,6 @@ interface CustomRepositoryInterface
      * @return bool
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function deleteById(int $customId)
+    public function deleteById(int $customId);
 
 }

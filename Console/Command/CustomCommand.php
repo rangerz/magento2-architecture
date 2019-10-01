@@ -2,10 +2,11 @@
 /**
  * Certification comments
  * 
- * 1. Magento has one command-line interface that performs both installation and configuration tasks
+ * 1. Magento has one command-line interface that performs both installation and configuration 
+ *    tasks
  * 2. When runing bin/magento on the command line, a list of available commands to run is output
- * 3. Code for commands should reside in the Console subdirectory of a module. Recommended location is
- *    <your component root dir>/Console/Command subdirectory.
+ * 3. Code for commands should reside in the Console subdirectory of a module. Recommended 
+ *    location is <your component root dir>/Console/Command subdirectory.
  */
 
 namespace Barranco\MagentoArchitecture\Console\Command;

@@ -9,9 +9,9 @@
  */
 namespace Barranco\MagentoArchitecture\Api\Data;
 
-use Magento\Framework\Api\SearchResultInterface;
+use Magento\Framework\Api\SearchResultsInterface;
 
-interface CustomSearchResultInterface extends SearchResultInterface
+interface CustomSearchResultInterface extends SearchResultsInterface
 {
     /**
      * Get custom entity list

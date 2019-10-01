@@ -18,9 +18,14 @@ use Psr\Log\LoggerInterface;
 
 class Custom 
 {
-
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
     protected $logger;
 
+    /**
+     * @param \Psr\Log\LoggerInterface $logger
+     */
     public function __construct(
         LoggerInterface $logger
     )
@@ -28,6 +33,9 @@ class Custom
         $this->logger = $logger;
     }
 
+    /**
+     * @return $this
+     */
     public function execute()
     {
         $this->logger->info('Custom cron works');
