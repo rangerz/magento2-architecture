@@ -19,8 +19,8 @@
  * 
  *    a) Are dispatched by modules when certain actions are triggered.
  *    b) Can cbe reated by you and dispatched in your code.
- *    c) Is dispatched using the dispatch method of the event manager class providing it with the 
- *       name of the event you want to dispatch: $this->eventManager->dispatch('event_name');
+ *    c) Is dispatched using the dispatch method of the event manager class providing it with 
+ *       the name of the event you want to dispatch: $this->eventManager->dispatch('event_name');
  */
 
 namespace Barranco\MagentoArchitecture\Controller\Index;
@@ -42,6 +42,11 @@ class Index extends Action
      * @var \Magento\Framework\Event\ManagerInterface
      */
     private $eventManager;
+
+    /**
+     * @var string
+     */
+    protected $msg;
 
     /**
      * Class constructor
@@ -68,9 +73,32 @@ class Index extends Action
     public function execute()
     {
         $this->eventManager->dispatch('custom_module_event_before');
+        $this->setMessage('Thanks');
+        
         echo $this->helper->toUpperCase(__('Welcome to Custom Fronten Controller'));
         echo '<br/>';
         echo $this->helper->toLowerCase(__('This is a welcome message'));
+        echo '<br/>';
+        echo $this->getMessage();
+        
         $this->eventManager->dispatch('custom_module_event_after');
     }
+
+    /**
+     * @param  string $msg
+     * @return $this
+     */
+    public function setMessage($msg)
+    {
+        $this->msg = $msg;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->msg;
+    }
+
 }

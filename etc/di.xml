@@ -32,6 +32,12 @@
  *                     module etc/<area> subdirectory. Areas could be: adminhtml & frontend then 
  *                     to specify you should create your configuration file within your module 
  *                     etc/adminhtml or etc/frontend subdirectory.
+ *
+ * 3. In order to work with Plugins you should declares it here like following:
+ *
+ *     <type name="{ClassToIntercept}">
+ *         <plugin name="{customPluginName}" type="classToUseAsInterceptor" />
+ *     </type>
  * 
  */
 -->
@@ -43,5 +49,11 @@
                 <item name="customCommand" xsi:type="object">Barranco\MagentoArchitecture\Console\Command\CustomCommand</item>
             </argument>
         </arguments>
-    </type>            
+    </type>    
+    <type name="Barranco\MagentoArchitecture\Controller\Index\Index">
+        <plugin 
+            name="custom_plugin_example" 
+            type="Barranco\MagentoArchitecture\Plugin\Custom" 
+            sortOrder="10" />
+    </type>        
 </config>
